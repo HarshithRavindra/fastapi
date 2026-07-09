@@ -20,9 +20,14 @@ function App() {
   const [companies, setCompanies] = useState<company[]>([]);
 
   const handleLogin = (accessToken: string) => {
+    console.log("TOKEN RECEIVED:", accessToken);
+
     localStorage.setItem("token", accessToken);
+
+    console.log("TOKEN SAVED:", localStorage.getItem("token"));
+
     setToken(accessToken);
-  };
+};
 
   const handleLogout = () => {
     localStorage.removeItem("token");
